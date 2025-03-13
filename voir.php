@@ -28,7 +28,6 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     <h5 class="card-title">Marque: <?= $voitures['marque'] ?></h5>
     <h5 class="card-title">Modèle: <?= $voitures['modele'] ?></h5>
     <h5 class="card-title">Matricule: <?= $voitures['matricule'] ?></h5>
-    
     <a href="index.php" class="btn btn-primary">retour</a>
   </div>
 </div>

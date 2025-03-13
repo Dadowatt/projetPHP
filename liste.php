@@ -32,12 +32,22 @@ $voitures=$query->fetchAll(PDO::FETCH_ASSOC);
       <td>
         <a class="btn btn-warning" href="voir.php?id=<?= $voiture['id'] ?>"><i class="bi bi-eye-fill"></i></a>
         <a class="btn btn-success" href="update.php?id=<?= $voiture['id'] ?>"><i class="bi bi-pencil-square"></i></a>
-        <a class="btn btn-danger" href="delete.php?id=<?= $voiture['id'] ?>"><i class="bi bi-trash"></i></a>
+        <a class="btn btn-danger" href="delete.php?id=<?= $voiture['id'] ?>" onclick="confirmDelete(event, <?= $voiture['id'] ?>)"><i class="bi bi-trash"></i></a>
       </td>
     </tr>
     <?php
     }
     ?>
+
+<script>
+    function confirmDelete(event, id) {
+      event.preventDefault();
+        if (confirm("Voulez-vous vraiment supprimer cette voiture ?")) {
+            // Si confirmé, redirige vers delete.php avec l'ID
+            window.location.href = "delete.php?id=" + id;
+        }
+    }
+</script>
 
   </tbody>
 </table>
